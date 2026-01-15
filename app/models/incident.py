@@ -96,6 +96,11 @@ class Incident(Base):
         back_populates="incident",
         cascade="all, delete-orphan"
     )
+    playbook_executions = relationship(
+        "PlaybookExecution",
+        back_populates="incident",
+        cascade="all, delete-orphan"
+    )
 
     def __repr__(self):
         return f"<Incident(id={self.id}, ticket='{self.ticket_number}', severity='{self.severity}')>"
