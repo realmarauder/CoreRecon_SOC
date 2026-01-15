@@ -1,0 +1,1 @@
+{"tag": "checkpoint-20260115-150636", "file": "/tmp/corerecon_soc_dev/alembic/script.py.mako", "timestamp": "2026-01-15T21:06:36Z", "type": "post-edit", "branch": "main", "diff_summary": " .claude/checkpoints/1768511192.json |  1 +  .claude/checkpoints/1768511193.json |  1 +  alembic/script.py.mako              | 26 ++++++++++++++++++++++++++  3 files changed, 28 insertions(+) "}
