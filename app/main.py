@@ -60,7 +60,10 @@ async def root():
             "Incident management with SLA tracking",
             "SIEM webhook integration (Elastic, Sentinel, Splunk)",
             "Dashboard metrics and KPIs",
-            "JWT authentication"
+            "JWT authentication",
+            "MITRE ATT&CK Navigator integration",
+            "Playbook automation and execution tracking",
+            "Alert correlation and deduplication"
         ]
     }
 
