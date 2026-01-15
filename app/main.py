@@ -32,7 +32,7 @@ async def lifespan(app: FastAPI):
 app = FastAPI(
     title=settings.app_name,
     version=settings.app_version,
-    description="Enterprise-grade Security Operations Center (SOC) platform",
+    description="Enterprise-grade Security Operations Center (SOC) platform with real-time threat detection, incident management, and SIEM integration",
     docs_url="/docs" if settings.debug else None,
     redoc_url="/redoc" if settings.debug else None,
     lifespan=lifespan,
@@ -54,7 +54,14 @@ async def root():
     return {
         "message": "CoreRecon SOC API",
         "version": settings.app_version,
-        "status": "operational"
+        "status": "operational",
+        "features": [
+            "Real-time alert streaming via WebSocket",
+            "Incident management with SLA tracking",
+            "SIEM webhook integration (Elastic, Sentinel, Splunk)",
+            "Dashboard metrics and KPIs",
+            "JWT authentication"
+        ]
     }
 
 
@@ -81,12 +88,14 @@ async def websocket_stats():
 
 
 # Import and include routers
-from app.api.v1 import alerts, incidents, auth
+from app.api.v1 import alerts, incidents, auth, webhooks, dashboard
 from app.websocket import handlers
 
 app.include_router(auth.router, prefix="/api/v1/auth", tags=["Authentication"])
 app.include_router(alerts.router, prefix="/api/v1/alerts", tags=["Alerts"])
 app.include_router(incidents.router, prefix="/api/v1/incidents", tags=["Incidents"])
+app.include_router(webhooks.router, prefix="/api/v1/webhooks", tags=["Webhooks"])
+app.include_router(dashboard.router, prefix="/api/v1/dashboard", tags=["Dashboard"])
 app.include_router(handlers.router, tags=["WebSocket"])
 
 
