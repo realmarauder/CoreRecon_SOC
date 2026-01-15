@@ -1,0 +1,1 @@
+{"tag": "checkpoint-20260115-150446", "file": "/tmp/corerecon_soc_dev/app/core/events.py", "timestamp": "2026-01-15T21:04:46Z", "type": "post-edit", "branch": "main", "diff_summary": " .claude/checkpoints/1768511082.json |  1 +  .claude/checkpoints/1768511083.json |  1 +  app/core/events.py                  | 30 ++++++++++++++++++++++++++++++  3 files changed, 32 insertions(+) "}
