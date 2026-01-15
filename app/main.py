@@ -8,6 +8,7 @@ from fastapi.responses import JSONResponse
 
 from app.config import settings
 from app.core.events import close_db_connection, connect_to_db
+from app.websocket.manager import manager
 
 
 @asynccontextmanager
@@ -15,8 +16,15 @@ async def lifespan(app: FastAPI):
     """Application lifespan events."""
     # Startup
     await connect_to_db()
+
+    # Set up Redis for WebSocket pub/sub if URL is configured
+    if settings.redis_url:
+        await manager.setup_redis(settings.redis_url)
+
     yield
+
     # Shutdown
+    await manager.close_redis()
     await close_db_connection()
 
 
@@ -63,15 +71,23 @@ async def health_check():
     )
 
 
+@app.get("/ws/stats")
+async def websocket_stats():
+    """Get WebSocket connection statistics."""
+    return {
+        "connections": manager.get_connection_stats(),
+        "redis_connected": manager.redis_client is not None
+    }
+
+
 # Import and include routers
-# from app.api.v1 import alerts, incidents, auth, dashboard, attack, threat_intel, webhooks
-# app.include_router(auth.router, prefix="/api/v1/auth", tags=["Authentication"])
-# app.include_router(alerts.router, prefix="/api/v1/alerts", tags=["Alerts"])
-# app.include_router(incidents.router, prefix="/api/v1/incidents", tags=["Incidents"])
-# app.include_router(dashboard.router, prefix="/api/v1/dashboard", tags=["Dashboard"])
-# app.include_router(attack.router, prefix="/api/v1/attack", tags=["MITRE ATT&CK"])
-# app.include_router(threat_intel.router, prefix="/api/v1/threat-intel", tags=["Threat Intelligence"])
-# app.include_router(webhooks.router, prefix="/api/v1/webhooks", tags=["Webhooks"])
+from app.api.v1 import alerts, incidents, auth
+from app.websocket import handlers
+
+app.include_router(auth.router, prefix="/api/v1/auth", tags=["Authentication"])
+app.include_router(alerts.router, prefix="/api/v1/alerts", tags=["Alerts"])
+app.include_router(incidents.router, prefix="/api/v1/incidents", tags=["Incidents"])
+app.include_router(handlers.router, tags=["WebSocket"])
 
 
 if __name__ == "__main__":
