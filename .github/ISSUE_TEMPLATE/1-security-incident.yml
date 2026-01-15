@@ -1,0 +1,137 @@
+name: 🚨 Security Incident Report
+description: Report a security incident or threat detection
+title: "[INCIDENT] "
+labels: ["security-incident", "triage"]
+assignees: []
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## Security Incident Reporting
+        Use this template to report security incidents, threats, or suspicious activities.
+
+  - type: dropdown
+    id: severity
+    attributes:
+      label: Incident Severity
+      description: Select the severity level of this incident
+      options:
+        - Critical
+        - High
+        - Medium
+        - Low
+        - Informational
+    validations:
+      required: true
+
+  - type: input
+    id: detection-source
+    attributes:
+      label: Detection Source
+      description: Where was this incident detected?
+      placeholder: "e.g., SIEM, EDR, Manual Analysis, Cloud Guard"
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Incident Description
+      description: Provide a detailed description of the incident
+      placeholder: Describe what happened, when it was detected, and initial observations
+    validations:
+      required: true
+
+  - type: textarea
+    id: affected-assets
+    attributes:
+      label: Affected Assets
+      description: List all affected systems, hosts, or resources
+      placeholder: |
+        - Hostname: WORKSTATION-042
+        - IP Address: 192.168.1.42
+        - User Account: john.doe@example.com
+    validations:
+      required: false
+
+  - type: textarea
+    id: iocs
+    attributes:
+      label: Indicators of Compromise (IOCs)
+      description: List any IOCs discovered (IPs, domains, hashes, etc.)
+      placeholder: |
+        - IP: 203.0.113.50
+        - Domain: malicious-site.com
+        - Hash (SHA256): e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+    validations:
+      required: false
+
+  - type: dropdown
+    id: mitre-tactic
+    attributes:
+      label: MITRE ATT&CK Tactic
+      description: Primary tactic observed
+      options:
+        - Not Applicable
+        - Reconnaissance
+        - Resource Development
+        - Initial Access
+        - Execution
+        - Persistence
+        - Privilege Escalation
+        - Defense Evasion
+        - Credential Access
+        - Discovery
+        - Lateral Movement
+        - Collection
+        - Command and Control
+        - Exfiltration
+        - Impact
+    validations:
+      required: false
+
+  - type: input
+    id: mitre-technique
+    attributes:
+      label: MITRE ATT&CK Technique ID
+      description: If known, provide the technique ID (e.g., T1486)
+      placeholder: "T1486"
+    validations:
+      required: false
+
+  - type: dropdown
+    id: status
+    attributes:
+      label: Current Status
+      description: Current incident response status
+      options:
+        - New
+        - Assigned
+        - Investigating
+        - Contained
+        - Eradicated
+        - Recovered
+      default: 0
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: response-actions
+    attributes:
+      label: Response Actions Taken
+      description: Check all actions already taken
+      options:
+        - label: Isolated affected systems
+        - label: Collected forensic evidence
+        - label: Notified stakeholders
+        - label: Initiated containment procedures
+        - label: Escalated to senior analyst
+
+  - type: textarea
+    id: additional-context
+    attributes:
+      label: Additional Context
+      description: Any additional information, screenshots, or logs
+    validations:
+      required: false
