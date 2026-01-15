@@ -91,7 +91,7 @@ async def websocket_stats():
 
 
 # Import and include routers
-from app.api.v1 import alerts, incidents, auth, webhooks, dashboard, mitre_attack, playbooks
+from app.api.v1 import alerts, incidents, auth, webhooks, dashboard, mitre_attack, playbooks, correlation
 from app.websocket import handlers
 
 app.include_router(auth.router, prefix="/api/v1/auth", tags=["Authentication"])
@@ -101,6 +101,7 @@ app.include_router(webhooks.router, prefix="/api/v1/webhooks", tags=["Webhooks"]
 app.include_router(dashboard.router, prefix="/api/v1/dashboard", tags=["Dashboard"])
 app.include_router(mitre_attack.router, prefix="/api/v1", tags=["MITRE ATT&CK"])
 app.include_router(playbooks.router, prefix="/api/v1", tags=["Playbooks"])
+app.include_router(correlation.router, prefix="/api/v1", tags=["Correlation"])
 app.include_router(handlers.router, tags=["WebSocket"])
 
 
