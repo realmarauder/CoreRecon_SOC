@@ -1,0 +1,1 @@
+{"tag": "checkpoint-20260115-142823", "file": "/tmp/corerecon_soc/Dockerfile", "timestamp": "2026-01-15T20:28:23Z", "type": "post-edit", "branch": "master", "diff_summary": " .claude/checkpoints/1768508865.json |  1 +  .claude/checkpoints/1768508866.json |  1 +  Dockerfile                          | 39 +++++++++++++++++++++++++++++++++++++  3 files changed, 41 insertions(+) "}
