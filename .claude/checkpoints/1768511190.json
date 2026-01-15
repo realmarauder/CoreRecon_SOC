@@ -1,0 +1,1 @@
+{"tag": "checkpoint-20260115-150630", "file": "/tmp/corerecon_soc_dev/alembic.ini", "timestamp": "2026-01-15T21:06:30Z", "type": "post-edit", "branch": "main", "diff_summary": " .claude/checkpoints/1768511186.json |  1 +  .claude/checkpoints/1768511188.json |  1 +  alembic.ini                         | 82 +++++++++++++++++++++++++++++++++++++  3 files changed, 84 insertions(+) "}
