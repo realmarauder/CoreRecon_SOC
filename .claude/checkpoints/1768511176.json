@@ -1,0 +1,1 @@
+{"tag": "checkpoint-20260115-150616", "file": "/tmp/corerecon_soc_dev/app/models/__init__.py", "timestamp": "2026-01-15T21:06:16Z", "type": "post-edit", "branch": "main", "diff_summary": " .claude/checkpoints/1768511173.json |  1 +  .claude/checkpoints/1768511174.json |  1 +  app/models/__init__.py              | 17 +++++++++++++++++  3 files changed, 19 insertions(+) "}
