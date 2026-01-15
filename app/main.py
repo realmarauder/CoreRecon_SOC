@@ -63,7 +63,9 @@ async def root():
             "JWT authentication",
             "MITRE ATT&CK Navigator integration",
             "Playbook automation and execution tracking",
-            "Alert correlation and deduplication"
+            "Alert correlation and deduplication",
+            "Detection rule management (Sigma, YARA, custom)",
+            "Threat intelligence feed integration"
         ]
     }
 
