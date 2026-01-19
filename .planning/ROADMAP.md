@@ -24,7 +24,12 @@
 
 **Goal:** Close all P1 security gaps before any production deployment.
 
-**Plans:** 3 plans (Wave 1 - all parallel)
+**Plans:** 3 plans in 2 waves
+
+| Wave | Plans | Description |
+|------|-------|-------------|
+| 1 | 01-01 | Startup validation + CORS restriction |
+| 2 | 01-02, 01-03 | Token blacklist + rate limiting, Webhook auth (parallel) |
 
 Plans:
 - [ ] 01-01-PLAN.md - Startup validation and CORS restriction (SEC-05, SEC-06)
@@ -196,7 +201,7 @@ Plans:
 
 | Phase | Started | Completed | Notes |
 |-------|---------|-----------|-------|
-| 1 | - | - | 3 plans created |
+| 1 | - | - | 3 plans in 2 waves |
 | 2 | - | - | |
 | 3 | - | - | |
 | 4 | - | - | |
