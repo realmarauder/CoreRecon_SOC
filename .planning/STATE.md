@@ -63,9 +63,10 @@ None currently - gap analysis provides clear priorities.
 
 ## Todos
 
-- [ ] Create v1.1 roadmap
+- [x] Create v1.1 roadmap
 - [ ] Plan Phase 1 (Security Hardening)
-- [ ] Execute test suite foundation
+- [ ] Execute Phase 1
+- [ ] Plan and execute remaining phases
 
 ---
 

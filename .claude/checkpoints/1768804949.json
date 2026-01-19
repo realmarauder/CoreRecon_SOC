@@ -1,0 +1,1 @@
+{"tag": "checkpoint-20260119-004229", "file": "/home/thatguy/CoreRecon_SOC/.planning/STATE.md", "timestamp": "2026-01-19T06:42:29Z", "type": "post-edit", "branch": "main", "diff_summary": " .claude/checkpoints/1768804935.json | 1 +  .claude/checkpoints/1768804936.json | 1 +  .planning/STATE.md                  | 4 ++--  3 files changed, 4 insertions(+), 2 deletions(-) "}
