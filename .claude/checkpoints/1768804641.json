@@ -1,0 +1,1 @@
+{"tag": "checkpoint-20260119-003721", "file": "/home/thatguy/CoreRecon_SOC/.planning/PRIORITY_GAPS.md", "timestamp": "2026-01-19T06:37:21Z", "type": "post-edit", "branch": "main", "diff_summary": " .claude/checkpoints/task-1768804593.json |   1 +  .planning/PRIORITY_GAPS.md               | 244 +++++++++++++++++++++++++++++++  2 files changed, 245 insertions(+) "}
