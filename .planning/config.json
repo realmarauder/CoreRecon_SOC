@@ -1,0 +1,18 @@
+{
+  "version": "1.0",
+  "workflow_mode": "interactive",
+  "project": {
+    "name": "CoreRecon SOC",
+    "type": "brownfield",
+    "initialized": "2026-01-19"
+  },
+  "gates": {
+    "require_plan_approval": true,
+    "require_phase_verification": true,
+    "auto_commit": true
+  },
+  "preferences": {
+    "commit_style": "conventional",
+    "branch_strategy": "feature-branches"
+  }
+}
