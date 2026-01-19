@@ -9,7 +9,7 @@
 
 | Phase | Name | Requirements | Status |
 |-------|------|--------------|--------|
-| 1 | Security Hardening | SEC-01 to SEC-06 | Not Started |
+| 1 | Security Hardening | SEC-01 to SEC-06 | Planned |
 | 2 | Database Migrations | DB-01 to DB-03 | Not Started |
 | 3 | Test Infrastructure | TEST-01 to TEST-07 | Not Started |
 | 4 | Functionality Polish | FUNC-01 to FUNC-04 | Not Started |
@@ -23,6 +23,13 @@
 ## Phase 1: Security Hardening
 
 **Goal:** Close all P1 security gaps before any production deployment.
+
+**Plans:** 3 plans (Wave 1 - all parallel)
+
+Plans:
+- [ ] 01-01-PLAN.md - Startup validation and CORS restriction (SEC-05, SEC-06)
+- [ ] 01-02-PLAN.md - Token blacklist and rate limiting (SEC-03, SEC-04)
+- [ ] 01-03-PLAN.md - Webhook signature verification (SEC-01, SEC-02)
 
 **Requirements:**
 - SEC-01: Webhook signature verification for Azure Sentinel
@@ -189,7 +196,7 @@
 
 | Phase | Started | Completed | Notes |
 |-------|---------|-----------|-------|
-| 1 | - | - | |
+| 1 | - | - | 3 plans created |
 | 2 | - | - | |
 | 3 | - | - | |
 | 4 | - | - | |
@@ -201,3 +208,4 @@
 ---
 
 *Roadmap created: 2026-01-19*
+*Phase 1 planned: 2026-01-19*
